@@ -20,7 +20,7 @@ grunt.loadNpmTasks('grunt-iron-worker');
 
 
 
-## Concat task
+## Iron Worker Task
 _Run this task with the `grunt ironworker` command._
 
 Task targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
