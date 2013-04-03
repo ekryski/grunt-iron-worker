@@ -49,6 +49,11 @@ module.exports = function(grunt) {
       }
 
       if (optionsMapping[key] || key === 'worker') {
+
+        // Need to remove '.worker' extension for scheduling
+        if (target === 'schedule' && key === 'worker'){
+          options[key] = options[key].split('.')[0];
+        }
         string.push(options[key]);
       }
     }
@@ -61,6 +66,14 @@ module.exports = function(grunt) {
 
         // async and full remote build are just flags, they have no values
         if (key !== 'async' || key !== 'fullRemoteBuild'){
+
+          // If it is a date convert it to ISO string format
+          // and wrap in quotes. Like so "2013-04-03T20:00:00.000Z"
+          if (key === 'start' || key === 'end'){
+            var date = new Date(data[key]);
+            data[key] = '"' + date.toISOString() + '"';
+          }
+
           string.push(data[key]);
         }
       }
