@@ -1,6 +1,6 @@
 {
   "name": "grunt-iron-worker",
-  "description": "Concatenate files.",
+  "description": "Grunt plugin for managing Iron.io workers",
   "version": "0.0.1",
   "homepage": "https://github.com/ekryski/grunt-iron-worker",
   "author": {
