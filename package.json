@@ -1,0 +1,40 @@
+{
+  "name": "grunt-iron-worker",
+  "description": "Concatenate files.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ekryski/grunt-iron-worker",
+  "author": {
+    "name": "Eric Kryski",
+    "url": "http://erickryski.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ekryski/grunt-iron-worker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ekryski/grunt-iron-worker/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/ekryski/grunt-iron-worker/blob/master/LICENSE"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.2.0",
+    "grunt": "~0.4.0"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
