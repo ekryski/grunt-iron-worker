@@ -31,7 +31,7 @@ TODO: Fill this guy in
 
 ### Usage Examples
 
-```json
+```js
 ironworker: {
   options: {
     worker: '<%= pkg.name %>.worker',
