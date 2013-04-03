@@ -65,7 +65,7 @@ module.exports = function(grunt) {
         }
 
         // async and full remote build are just flags, they have no values
-        if (key !== 'async' || key !== 'fullRemoteBuild'){
+        if (key !== 'async' && key !== 'fullRemoteBuild'){
 
           // If it is a date convert it to ISO string format
           // and wrap in quotes. Like so "2013-04-03T20:00:00.000Z"
@@ -95,6 +95,7 @@ module.exports = function(grunt) {
 
     var worker = exec(cmd, function (err, stdout, stderr) {
       if (err) grunt.warn(err);
+
       callback();
     });
 
