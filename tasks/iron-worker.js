@@ -31,7 +31,7 @@ module.exports = function(grunt) {
     start: '--start-at',
     end: '--end-at',
     runTimes: '--run-times',
-    runEvery: '--end-times'
+    runEvery: '--run-every'
   };
 
   function generateOptionsString(target, options, data){
@@ -44,18 +44,25 @@ module.exports = function(grunt) {
         continue;
       }
 
-      string.push(optionsMapping[key]);
-      string.push(options[key]);
-    }
-
-    for (key in data){
-      if (data[key] || data[key] === 0){
+      if (optionsMapping[key]) {
         string.push(optionsMapping[key]);
       }
 
-      // async and full remote build are just flags, they have no values
-      if (key !== 'async' || key !== 'fullRemoteBuild'){
-        string.push(data[key]);
+      if (optionsMapping[key] || key === 'worker') {
+        string.push(options[key]);
+      }
+    }
+
+    for (key in data){
+      if (optionsMapping[key]) {
+        if (data[key] || data[key] === 0){
+          string.push(optionsMapping[key]);
+        }
+
+        // async and full remote build are just flags, they have no values
+        if (key !== 'async' || key !== 'fullRemoteBuild'){
+          string.push(data[key]);
+        }
       }
     }
 

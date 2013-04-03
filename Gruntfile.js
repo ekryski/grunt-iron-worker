@@ -2,6 +2,7 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
     watch: {
       files: '<config:lint.files>',
       tasks: 'default'
