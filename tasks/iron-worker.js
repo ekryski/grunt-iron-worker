@@ -29,6 +29,7 @@ module.exports = function(grunt) {
     timeout: '--timeout',
     delay: '--delay',
     start: '--start-at',
+	  workerConfig: '--worker-config',
     end: '--end-at',
     runTimes: '--run-times',
     runEvery: '--run-every'
