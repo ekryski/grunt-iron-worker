@@ -29,6 +29,7 @@ module.exports = function(grunt) {
     timeout: '--timeout',
     delay: '--delay',
     start: '--start-at',
+	  workerConfig: '--worker-config',
     end: '--end-at',
     runTimes: '--run-times',
     runEvery: '--run-every'
@@ -86,10 +87,18 @@ module.exports = function(grunt) {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({});
     var callback = this.async();
+	  
+	var target = this.target;
+	var data = this.data;
+	  
+	if(this.args.length > 0){
+		target = this.args[0];
+		data = this.data[target];
+	}
 
     grunt.verbose.writeflags(options, 'Options');
 
-    var cmd = grunt.template.process(['iron_worker', this.target, generateOptionsString(this.target, options, this.data)].join(' '));
+    var cmd = grunt.template.process(['iron_worker', target, generateOptionsString(target, options, data)].join(' '));
 
     grunt.verbose.writeln('Command:', cmd.yellow);
 
